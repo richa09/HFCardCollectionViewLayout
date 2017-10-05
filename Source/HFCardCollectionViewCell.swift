@@ -72,16 +72,16 @@ open class HFCardCollectionViewCell: UICollectionViewCell {
     
     private func setupLayer(_ forView: UIView) {
         // Shadow can have performance issues on older devices
-        let shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.cornerRadius).cgPath
-        forView.layer.shadowPath = shadowPath
-        forView.layer.masksToBounds = false
-        forView.layer.shadowColor = UIColor(white: 0.0, alpha: 1.0).cgColor
-        forView.layer.shadowRadius = 2
-        forView.layer.shadowOpacity = 0.35
-        forView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        forView.layer.rasterizationScale = UIScreen.main.scale
-        forView.layer.shouldRasterize = true
-        forView.clipsToBounds = false
+//         let shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.cornerRadius).cgPath
+//         forView.layer.shadowPath = shadowPath
+//         forView.layer.masksToBounds = false
+//         forView.layer.shadowColor = UIColor(white: 0.0, alpha: 1.0).cgColor
+//         forView.layer.shadowRadius = 2
+//         forView.layer.shadowOpacity = 0.35
+//         forView.layer.shadowOffset = CGSize(width: 0, height: 0)
+//         forView.layer.rasterizationScale = UIScreen.main.scale
+//         forView.layer.shouldRasterize = true
+//         forView.clipsToBounds = false
     }
     
 }
