@@ -54,7 +54,7 @@ extension UICollectionViewCell {
         super.apply(layoutAttributes)
         if let cardLayoutAttributes = layoutAttributes as? HFCardCollectionViewLayoutAttributes {
             self.layer.zPosition = CGFloat(cardLayoutAttributes.zIndex)
-            self.contentView.isUserInteractionEnabled = cardLayoutAttributes.isRevealed
+            self.contentView.isUserInteractionEnabled = true //cardLayoutAttributes.isRevealed
         } else {
             self.contentView.isUserInteractionEnabled = true
         }
