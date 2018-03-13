@@ -518,11 +518,11 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
         self.collectionView?.addGestureRecognizer(self.collectionViewTapGestureRecognizer!)
     }
     
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         self.collectionViewIgnoreBottomContentOffsetChanges = true
     }
     
-    func keyboardDidHide(_ notification: Notification) {
+    @objc func keyboardDidHide(_ notification: Notification) {
         self.collectionViewIgnoreBottomContentOffsetChanges = false
     }
     
@@ -642,7 +642,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
     
     // MARK: Private Functions for UICollectionViewLayout
     
-    internal func collectionViewTapGestureHandler() {
+    @objc internal func collectionViewTapGestureHandler() {
         if let tapLocation = self.collectionViewTapGestureRecognizer?.location(in: self.collectionView) {
             if let indexPath = self.collectionView?.indexPathForItem(at: tapLocation) {
                 self.collectionView?.delegate?.collectionView?(self.collectionView!, didSelectItemAt: indexPath)
@@ -860,7 +860,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
         }
     }
     
-    internal func revealedCardPanGestureHandler() {
+    @objc internal func revealedCardPanGestureHandler() {
         if self.collectionViewItemCount == 1 || self.revealedCardIsFlipped == true {
             return
         }
@@ -900,7 +900,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
     
     // MARK: Moving Card
     
-    internal func movingCardGestureHandler() {
+    @objc internal func movingCardGestureHandler() {
         let moveUpOffset: CGFloat = 20
         
         if let movingCardGestureRecognizer = self.movingCardGestureRecognizer {
@@ -1055,7 +1055,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
         self.autoscrollDisplayLink = nil
     }
     
-    internal func autoscrollHandler(displayLink: CADisplayLink) {
+    @objc internal func autoscrollHandler(displayLink: CADisplayLink) {
         let direction = self.autoscrollDirection
         if(direction == .unknown) {
             return
